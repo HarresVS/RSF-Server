@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <title>Super secure login ;]</title>
+    </head>
+    <body >
+        <img src="/p1_hkr.png" alt="Main" style="width: 100%; height:auto; ">
+        <div class="d-flex align-items-center light-blue-gradient" style="height: 100vh;">
+            <div class="container" >
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card rounded-0 shadow">
+                            <div class="card-body">
+                                <h3>Log In</h3>
+                                <div id="oof " style="margin-bottom: 30px;">to the most super safe website</div>
+                                <form action="/login" method="post">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" required aria-describedby="emailHelp" placeholder="Introduceti User-ul"  oninput="updateSpanText()" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Introduceti Parola" name="password"  oninput="updatePassText()" required >
+                                        <small id="emailHelp" class="form-text text-muted">Never share your password</small>
+                                    </div>
+                                    <div class="Alert" id="Alert"></div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            
+        </div>
+        <div style="background-color: rgba(13, 20, 13, 0.383);padding-bottom: 100px; border-radius: 15px; margin-left: auto; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); " >
+         <h2 style="color: rgb(120, 124, 129); text-align: center; font-size: medium;">
+           Hack-O-Vision
+         </h2>
+         <hr style="margin-top: auto;">
+              <div>
+                 <span style="color: rgb(6, 255, 6);">
+                      SELECT
+                 </span>
+                 <span style="color: rgb(255, 255, 255)">
+                 *
+                 </span>
+              </div>
+              <div>
+                 <span style="color: rgb(6, 255, 6);">
+                     FROM
+                </span>
+                <span style="color: rgb(255, 255, 255)">
+                Conturi
+                </span>
+              </div>
+              <div>
+                 <span style="color: rgb(6, 255, 6);">
+                     WHERE
+                </span>
+                <span style="color: rgb(255, 255, 255)">
+                Username = 
+                </span>
+                <span style="color: rgb(51, 64, 255)" id="userSpan">
+                   ' '
+                </span>
+              </div>
+              <div>
+                <span style="color: rgb(6, 255, 6);">
+                    AND
+               </span>
+               <span style="color: rgb(255, 255, 255)">
+               Password = 
+               </span>
+               <span style="color: rgb(51, 64, 255)" id="PassSpan">
+                  ' '
+               </span>
+               <span style="color: rgb(255, 51, 51)" id="PassIndicator">
+                
+             </span>
+             </div>
+        </div>
+        <script src="/main.js"></script>
+    </body>
+</html>

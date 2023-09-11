@@ -1,0 +1,27 @@
+/* CSS for the modern capsule button */
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 30px; /* This creates a capsule shape */
+    background: linear-gradient(to bottom, #db3434, #d71e1e); /* Gradient background color */
+    color: #000000; /* Text color */
+    font-size: 16px; /* Font size */
+    text-align: center;
+    text-decoration: none;
+    border: none; /* Remove border */
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+
+.button:hover {
+    background: linear-gradient(to bottom, #d41010, #ff0000); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+body {
+    background: linear-gradient(120deg, #eaffee 0%, #ffffff 100%);
+}
