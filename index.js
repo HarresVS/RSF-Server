@@ -1,17 +1,26 @@
 const express = require('express');
 const app = express();
+const rateLimit = require("express-rate-limit");
 const path = require("path");
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database(':memory:');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+
 db.serialize(function() {
     db.run("CREATE TABLE user (username TEXT, password TEXT, name TEXT)");
-    db.run("INSERT INTO user VALUES ('admin', 'eu', 'App Administrator')");
-    db.run("INSERT INTO user VALUES ('user', '1234', 'default')");
+    db.run("INSERT INTO user VALUES ('admin', '1234eu', 'App Administrator')");
   });
 
 
+
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 min
+  max: 50, // Max requests 
+});
+
+app.use(limiter);
+app.set('trust proxy', '1') // Trust all proxies
 app.use( express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors({origin: "*"}))
@@ -25,7 +34,7 @@ app.get('/', (request,response) =>{
 
 app.post('/login', function (req, res) {
     var username = req.body.username; // user valid 'admin'
-    var password = req.body.password; // parola valida 'eu'
+    var password = req.body.password; // parola valida '1234eu'
     var query = "SELECT name FROM user where username = '" + username + "' and password = '" + password + "' LIMIT 1";
 
     console.log("username: " + username);
